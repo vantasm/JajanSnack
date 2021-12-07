@@ -22,7 +22,7 @@ $ cp .env.example .env
 $ php artisan key:generate
 
 # Import database from jajanSnack.sql file to "localhost/phpmyadmin" (without quotation marks).
-# Click import from "localhost/phpmyadmin" and choose beans.sql
+# Click import from "localhost/phpmyadmin" and choose jajanSnack.sql
 
 # Run "php artisan serve".
 $ php artisan serve
