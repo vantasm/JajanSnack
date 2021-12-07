@@ -1,4 +1,5 @@
 # JajanSnack
+
 Project Laravel untuk tugas Secure Programming
 
 ## Installation
@@ -6,10 +7,10 @@ Project Laravel untuk tugas Secure Programming
 From your command line, clone and run beans:
 ```bash
 # Clone this repository inside the folder "xampp/htdocs/" (without quotation marks).
-$ git clone https://github.com/ArjunaAcchaDipa/beans.git
+$ git clone https://github.com/vantasm/JajanSnack.git
 
 # Change directory using your terminal or cmd.
-$ cd beans/
+$ cd JajanSnack/
 
 # Install composer
 $ composer install
@@ -20,7 +21,7 @@ $ cp .env.example .env
 # Generate a new application key.
 $ php artisan key:generate
 
-# Import database from beans.sql file to "localhost/phpmyadmin" (without quotation marks).
+# Import database from jajanSnack.sql file to "localhost/phpmyadmin" (without quotation marks).
 # Click import from "localhost/phpmyadmin" and choose beans.sql
 
 # Run "php artisan serve".
