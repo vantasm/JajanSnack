@@ -13,7 +13,7 @@ $ git clone https://github.com/vantasm/JajanSnack.git
 $ cd JajanSnack/
 
 # Install composer
-$ composer install
+$ composer install --ignore-platform-reqs
 
 # Copy the example env file and make the required configuration changes in the .env file.
 $ cp .env.example .env
