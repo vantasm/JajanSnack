@@ -18,8 +18,6 @@
     
         <link rel="stylesheet" href="css/aos.css">
     
-        <link rel="stylesheet" href="css/ionicons.min.css">
-    
         <link rel="stylesheet" href="css/bootstrap-datepicker.css">
         <link rel="stylesheet" href="css/jquery.timepicker.css">
     
@@ -47,5 +45,5 @@
     <script src="js/google-map.js"></script>
     <script src="js/main.js"></script>
 </body>
-<script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+<script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
 </html>

@@ -4,7 +4,7 @@
             <div class="mouse">
                 <a href="#" class="mouse-icon">
                     <div class="mouse-wheel">
-                        <span class="ion-ios-arrow-up"></span>
+                        <ion-icon name="chevron-up-outline"></ion-icon>
                     </div>
                 </a>
             </div>
@@ -16,13 +16,13 @@
                     <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
                     <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
                         <li class="ftco-animate">
-                            <a href="#"><span class="icon-twitter"></span></a>
+                            <a href="#"><ion-icon name="logo-twitter" style="font-size: 24px"></ion-icon></a>
                         </li>
                         <li class="ftco-animate">
-                            <a href="#"><span class="icon-facebook"></span></a>
+                            <a href="#"><ion-icon name="logo-facebook" style="font-size: 24px"></a>
                         </li>
                         <li class="ftco-animate">
-                            <a href="#"><span class="icon-instagram"></span></a>
+                            <a href="#"><ion-icon name="logo-instagram" style="font-size: 24px"></a>
                         </li>
                     </ul>
                 </div>
@@ -81,25 +81,17 @@
                     <div class="block-23 mb-3">
                         <ul>
                             <li>
-                                <span class="fas fa-arrow-up"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span>
+                                <a href="#"><span class="icon"><ion-icon name="map-outline"></ion-icon></span><span class="fas fa-arrow-up"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></a>
                             </li>
                             <li>
-                                <a href="#"><span class="icon icon-phone"></span><span class="text">+2 392 3929 210</span></a>
+                                <a href="#"><span class="icon"><ion-icon name="call-outline"></ion-icon></span><span class="text">+2 392 3929 210</span></a>
                             </li>
                             <li>
-                                <a href="#"><span class="icon icon-envelope"></span><span class="text">info@yourdomain.com</span></a>
+                                <a href="#"><span class="icon"><ion-icon name="mail-outline"></ion-icon></span><span class="text">info@yourdomain.com</span></a>
                             </li>
                         </ul>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12 text-center">
-                <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                    Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart color-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                </p>
             </div>
         </div>
     </div>
