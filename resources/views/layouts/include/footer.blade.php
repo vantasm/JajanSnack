@@ -81,7 +81,7 @@
                     <div class="block-23 mb-3">
                         <ul>
                             <li>
-                                <span class="icon icon-map-marker"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span>
+                                <span class="fas fa-arrow-up"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span>
                             </li>
                             <li>
                                 <a href="#"><span class="icon icon-phone"></span><span class="text">+2 392 3929 210</span></a>
