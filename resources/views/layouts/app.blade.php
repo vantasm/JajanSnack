@@ -29,6 +29,7 @@
       </head>
 <body>
     @include("layouts/include/navbar")
+    @yield("content")
     @include("layouts/include/footer")
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery-migrate-3.0.1.min.js"></script>
@@ -47,5 +48,4 @@
     <script src="js/google-map.js"></script>
     <script src="js/main.js"></script>
 </body>
-<script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
 </html>

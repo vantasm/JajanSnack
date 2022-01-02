@@ -4,7 +4,7 @@
             <div class="mouse">
                 <a href="#" class="mouse-icon">
                     <div class="mouse-wheel">
-                        <ion-icon name="chevron-up-outline"></ion-icon>
+                        <i class="fas fa-chevron-up"></i>
                     </div>
                 </a>
             </div>
