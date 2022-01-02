@@ -9230,7 +9230,7 @@ textarea.form-control {
     background: rgba(0, 0, 0, 0.02);
     border-radius: 50%;
     position: relative; }
-    .ftco-footer-social li a span {
+    .ftco-footer-social li a i {
       position: absolute;
       font-size: 26px;
       top: 50%;

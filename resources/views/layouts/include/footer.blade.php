@@ -12,17 +12,17 @@
         <div class="row mb-5">
             <div class="col-md">
                 <div class="ftco-footer-widget mb-4">
-                    <h2 class="ftco-heading-2">Vegefoods</h2>
+                    <h2 class="ftco-heading-2">JajanSnack</h2>
                     <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
                     <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
                         <li class="ftco-animate">
-                            <a href="#"><ion-icon name="logo-twitter" style="font-size: 24px"></ion-icon></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
                         </li>
                         <li class="ftco-animate">
-                            <a href="#"><ion-icon name="logo-facebook" style="font-size: 24px"></a>
+                            <a href="#"><i class="fab fa-facebook-square"></i></a>
                         </li>
                         <li class="ftco-animate">
-                            <a href="#"><ion-icon name="logo-instagram" style="font-size: 24px"></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
                         </li>
                     </ul>
                 </div>
@@ -81,13 +81,13 @@
                     <div class="block-23 mb-3">
                         <ul>
                             <li>
-                                <a href="#"><span class="icon"><ion-icon name="map-outline"></ion-icon></span><span class="fas fa-arrow-up"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></a>
+                                <a href="#"><span class="icon"><i class="far fa-map"></i></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></a>
                             </li>
                             <li>
-                                <a href="#"><span class="icon"><ion-icon name="call-outline"></ion-icon></span><span class="text">+2 392 3929 210</span></a>
+                                <a href="#"><span class="icon"><i class="fas fa-phone-alt"></i></span><span class="text">+2 392 3929 210</span></a>
                             </li>
                             <li>
-                                <a href="#"><span class="icon"><ion-icon name="mail-outline"></ion-icon></span><span class="text">info@yourdomain.com</span></a>
+                                <a href="#"><span class="icon"><i class="far fa-envelope"></i></span><span class="text">info@yourdomain.com</span></a>
                             </li>
                         </ul>
                     </div>
