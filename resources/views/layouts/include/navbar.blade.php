@@ -2,7 +2,7 @@
     <div class="container">
         <a class="navbar-brand" href="index.html">JajanSnack</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="oi oi-menu"></span> Menu
+            <i class="fas fa-bars"></i> Menu
         </button>
 
         <div class="collapse navbar-collapse" id="ftco-nav">
@@ -28,7 +28,7 @@
                     <a href="contact.html" class="nav-link">Contact</a>
                 </li>
                 <li class="nav-item cta cta-colored">
-                    <a href="cart.html" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a>
+                    <a href="cart.html" class="nav-link"><span><i class="fas fa-shopping-cart"></i></span>[0]</a>
                 </li>
             </ul>
         </div>
