@@ -4,7 +4,7 @@
     	<div class="container">
     		<div class="row">
     			<div class="col-lg-6 mb-5 ftco-animate">
-    				<a href="images/img1.jpg" class="image-popup"><img src="images/sweets.jpg" class="img-fluid" alt="Colorlib Template"></a>
+    				<a href="images/img1.jpg" class="image-popup"><img src="images/sweet_default_background.jpg" class="img-fluid" alt="Colorlib Template"></a>
     			</div>
     			<div class="col-lg-6 product-details pl-md-5 ftco-animate">
     				<h3>PRODUCT NAME</h3>
