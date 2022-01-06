@@ -20,7 +20,7 @@
                         <span><i class="fas fa-shopping-cart"></i></span>
                     </a>
                     <a href="#" class="heart d-flex justify-content-center align-items-center ">
-                        <span><i class="fas fa-heart"></i></span>
+                        <span><i class="fas fa-trash-alt"></i></span>
                     </a>
                 </div>
             </div>

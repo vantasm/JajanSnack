@@ -40,3 +40,7 @@ Route::get('/wishlist', function () {
 Route::get('/upload', function () {
     return view('upload');
 });
+
+Route::get('/cart', function () {
+    return view('cart');
+});
