@@ -15,15 +15,13 @@
                     <div class="dropdown-menu" aria-labelledby="dropdown04">
                         <a class="dropdown-item" href="/shop">Shop</a>
                         <a class="dropdown-item" href="/wishlist">Wishlist</a>
-                        <a class="dropdown-item" href="cart.html">Cart</a>
-                        <a class="dropdown-item" href="checkout.html">Checkout</a>
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a href="login.html" class="nav-link">Login</a>
+                    <a href="/login" class="nav-link">Login</a>
                 </li>
                 <li class="nav-item cta cta-colored">
-                    <a href="cart.html" class="nav-link"><span><i class="fas fa-shopping-cart"></i></span>[0]</a>
+                    <a href="/cart" class="nav-link"><span><i class="fas fa-shopping-cart"></i></span>[0]</a>
                 </li>
             </ul>
         </div>
