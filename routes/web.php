@@ -32,3 +32,11 @@ Route::get('/shop', function() {
 Route::get('/product', function () {
     return view('product');
 });
+
+Route::get('/wishlist', function () {
+    return view('wishlist');
+});
+
+Route::get('/upload', function () {
+    return view('upload');
+});
