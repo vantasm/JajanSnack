@@ -1,6 +1,6 @@
 <div class="col-md-6 col-lg-3 ftco-animate">
     <div class="product">
-        <a href="#" class="img-prod"><img class="img-fluid" src="images/snack_default_picture.png" alt="Colorlib Template">
+        <a href="#" class="img-prod"><img class="img-fluid" src="images/snacks/snack_default_picture.png" alt="Colorlib Template">
             <span class="status">DISC NUM</span>
             <div class="overlay"></div>
         </a>
