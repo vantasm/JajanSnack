@@ -33,7 +33,7 @@ img{
 {{-- Display evidence of transfer --}}
 <div class="container">
     <div class="row justify-content-center mb-3 pb-3">
-        <img src="/images/bukti transfer.jpg" alt="">
+        <img src="/images/payment/bukti transfer.jpg" alt="">
     </div>
 </div>
 
