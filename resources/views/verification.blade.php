@@ -1,32 +1,66 @@
+<style>
+img{
+    width: 20%;
+}    
+</style>
+
 @extends("layouts/app")
 
 @section("content")
-	<div class="hero-wrap hero-bread" style="background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('images/sweet_default_background.jpg')">
-		<div class="container">
-			<div class="row no-gutters slider-text align-items-center justify-content-center">
-				<div class="col-md-9 ftco-animate text-center">
-					<p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span></p>
-					<h1 class="mb-0 bread">Jajan Snack</h1>
-				</div>
-			</div>
-		</div>
-	</div>
+    
+    
+<div class="container">
+    <div class="row justify-content-center">
+        <h2 class="mb-5" style="padding-bottom: ">Upload Evidence of Transfer</h2>
+    </div>
+</div>
+    
 
-    <section class="ftco-section">
-        <div class="container">
-            <div class="row justify-content-center mb-3 pb-3">
-                <div class="col-md-12 heading-section text-center ftco-animate">
-					<h2 class="mb-4">Best Products</h2>
-					<p>Selected randomly based on the review on the products</p>
-				</div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                {{-- loop start 8x --}}
-                @include("layouts/include/display_snack")
-                {{-- end loop --}}
-            </div>
-        </div>
-    </section>
+{{-- Display evidence of transfer --}}
+<div class="container">
+
+{{-- versi 1 --}}
+    <?php 
+        $directory = "images/payment";
+        $images = glob($directory . "/*.*");
+        foreach($images as $image)
+        {
+    
+            echo '<img src="'.$image.'" style=" width: 20%;"><br/> '; 
+    ?>
+            <form action="" method="post" enctype="multipart/form-data">             
+                <input type="button" class="btn btn-danger py-3 px-5" value="Confirm Payment">
+            </form>
+    <?php
+        }
+    ?>
+
+{{-- versi 2 --}}
+    <?php
+        // $directory = "images/payment";
+        // $images = glob($directory . "/*.*");
+        // $countImages = count($images) ;
+
+        // $imagesPerRow = 5 ;
+
+        // for ($i = 0 ; $i < $countImages; $i++) {
+        //     //display image here
+        //     $image = $images[$i] ;
+        //     echo "<img src='$image'>" ; 
+    ?>
+            {{-- Confirm --}}
+            {{-- Move picture to payment_done --}}
+            {{-- <form action="" method="post" enctype="multipart/form-data">             
+                <input type="button" class="btn btn-danger py-3 px-5" value="Confirm Payment">
+            </form> --}}
+    <?php
+        //     if ($i % $imagesPerRow == 0) {
+        //         //have displayed an entire row
+        //         echo '<br>' ;
+        //     }
+        // }
+    ?>
+</div>
+
+</section>
 @endsection
