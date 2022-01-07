@@ -5,7 +5,7 @@
         <div class="container">
             <div class="row no-gutters slider-text align-items-center justify-content-center">
                 <div class="col-md-9 ftco-animate text-center">
-                    <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span>Products</span></p>
+                    <p class="breadcrumbs"><span>Products</span></p>
                     <h1 class="mb-0 bread">NAMA TOKO</h1>
                 </div>
             </div>
@@ -19,32 +19,32 @@
 				<div class="col-md-3 text-center d-flex align-self-stretch ftco-animate">
 					<div class="media block-6 services mb-md-0 mb-4">
 						<div class="icon bg-color-1 active d-flex justify-content-center align-items-center mb-2">
-								<i class="fas fa-truck" style="font-size: 32px"></i>
+								<i class="fas fa-truck" style="font-size: 32px; color:white"></i>
 						</div>
 						<div class="media-body">
 							<h3 class="heading">Free Shipping</h3>
-							<span>On order over $100</span>
+							<span>On order over Rp 50.000</span>
 						</div>
 					</div>      
 				</div>
 				<div class="col-md-3 text-center d-flex align-self-stretch ftco-animate">
 					<div class="media block-6 services mb-md-0 mb-4">
 						<div class="icon bg-color-2 d-flex justify-content-center align-items-center mb-2">
-							<i class="fas fa-box" style="font-size: 32px"></i>
+							<i class="fas fa-box" style="font-size: 32px; color: white"></i>
 						</div>
 						<div class="media-body">
-							<h3 class="heading">Always Fresh</h3>
-							<span>Product well package</span>
+							<h3 class="heading">Brand New</h3>
+							<span>Fresh from the oven</span>
 						</div>
 					</div>    
 				</div>
 				<div class="col-md-3 text-center d-flex align-self-stretch ftco-animate">
 					<div class="media block-6 services mb-md-0 mb-4">
 						<div class="icon bg-color-3 d-flex justify-content-center align-items-center mb-2">
-							<i class="fas fa-award" style="font-size: 32px"></i>
+							<i class="fas fa-award" style="font-size: 32px; color:white"></i>
 						</div>
 						<div class="media-body">
-							<h3 class="heading">Superior Quality</h3>
+							<h3 class="heading">Original</h3>
 							<span>Quality Products</span>
 						</div>
 					</div>      
@@ -52,11 +52,11 @@
 				<div class="col-md-3 text-center d-flex align-self-stretch ftco-animate">
 					<div class="media block-6 services mb-md-0 mb-4">
 						<div class="icon bg-color-4 d-flex justify-content-center align-items-center mb-2">
-							<i class="fas fa-user-clock" style="font-size: 32px"></i>
+							<i class="fas fa-user-clock" style="font-size: 32px; color:white"></i>
 						</div>
 						<div class="media-body">
 							<h3 class="heading">Support</h3>
-							<span>24/7 Support</span>
+							<span>100% Replied Chat</span>
 						</div>
 					</div>      
 				</div>
