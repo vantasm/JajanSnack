@@ -23,7 +23,7 @@
 						</div>
 						<div class="media-body">
 							<h3 class="heading">Free Shipping</h3>
-							<span>On order over $100</span>
+							<span>On order over Rp 50.000</span>
 						</div>
 					</div>      
 				</div>
@@ -33,8 +33,8 @@
 							<i class="fas fa-box" style="font-size: 32px"></i>
 						</div>
 						<div class="media-body">
-							<h3 class="heading">Always Fresh</h3>
-							<span>Product well package</span>
+							<h3 class="heading">Brand New</h3>
+							<span>Fresh from the oven</span>
 						</div>
 					</div>    
 				</div>
@@ -44,7 +44,7 @@
 							<i class="fas fa-award" style="font-size: 32px"></i>
 						</div>
 						<div class="media-body">
-							<h3 class="heading">Superior Quality</h3>
+							<h3 class="heading">Original</h3>
 							<span>Quality Products</span>
 						</div>
 					</div>      
@@ -56,7 +56,7 @@
 						</div>
 						<div class="media-body">
 							<h3 class="heading">Support</h3>
-							<span>24/7 Support</span>
+							<span>100% Replied Chat</span>
 						</div>
 					</div>      
 				</div>
