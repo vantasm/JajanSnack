@@ -12,10 +12,10 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
 
     /**
      * Show the application dashboard.
@@ -24,8 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $products = Product::all()->sortBy("rating", "asc")->pagination(8)->get();
-        dd($products);
-        return view('index', compact("products"));
+        $products = Product::orderBy("rating", "desc")->paginate(8);
+        return view('index')->with("products", $products);
     }
 }

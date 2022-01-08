@@ -6,7 +6,7 @@
             <div class="row no-gutters slider-text align-items-center justify-content-center">
                 <div class="col-md-9 ftco-animate text-center">
                     <p class="breadcrumbs"><span>Products</span></p>
-                    <h1 class="mb-0 bread">NAMA TOKO</h1>
+                    <h1 class="mb-0 bread">Jajan Snack</h1>
                 </div>
             </div>
         </div>
@@ -14,11 +14,10 @@
 
     <section class="ftco-section">
         <div class="container">
-			{{-- start loop for service badge --}}
 			<div class="row no-gutters ftco-services">
 				<div class="col-md-3 text-center d-flex align-self-stretch ftco-animate">
 					<div class="media block-6 services mb-md-0 mb-4">
-						<div class="icon bg-color-1 active d-flex justify-content-center align-items-center mb-2">
+						<div class="icon bg-color-1 d-flex justify-content-center align-items-center mb-2">
 								<i class="fas fa-truck" style="font-size: 32px; color:white"></i>
 						</div>
 						<div class="media-body">
@@ -61,37 +60,23 @@
 					</div>      
 				</div>
 			</div>
-			{{-- stop loop for badge --}}
 
             <div class="row justify-content-center mt-5">
     			<div class="col-md-10 mb-5 text-center">
-    				<ul class="product-category">
-    					<li><a href="#" class="active">All</a></li>
-    					<li><a href="#">Loop 1</a></li>
-    					<li><a href="#">Loop 2</a></li>
-    					<li><a href="#">Loop 3</a></li>
-    					<li><a href="#">Loop 4</a></li>
+    				<ul class="product-category" name="category">
+    					<li><a href="#" class="active" id="all">All</a></li>
+    					<li><a href="#" id="biscuits">Biscuits</a></li>
+    					<li><a href="#" id="chips">Chips</a></li>
+    					<li><a href="#" id="chocolate">Chocolate</a></li>
+    					<li><a href="#" id="candy">Candy</a></li>
     				</ul>
     			</div>
     		</div>
             <div class="row">
-				@include("layouts/include/display_snack")
+				@foreach ($products as $product)
+					@include("layouts/include/display_snack")
+				@endforeach
             </div>
-            <div class="row mt-5">
-				<div class="col text-center">
-					<div class="block-27">
-						<ul>
-							<li><a href="#">&lt;</a></li>
-							<li class="active"><span>1</span></li>
-							<li><a href="#">2</a></li>
-							<li><a href="#">3</a></li>
-							<li><a href="#">4</a></li>
-							<li><a href="#">5</a></li>
-							<li><a href="#">&gt;</a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
         </div>
     </section>
 @endsection

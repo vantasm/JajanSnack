@@ -13,18 +13,6 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-// Ganti alamat routing
-Route::get('/', function () {
-    return view('index');
-});
-
-Route::get('/index', function () {
-    return view('index');
-});
-
-// Route::get('/home', function () {
-//     return view('index');
-// });
 
 Route::get('/shop', function() {
     return view ("shop");
@@ -64,4 +52,8 @@ Route::get('/shipping', function () {
 
 Auth::routes();
 
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/index', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/shop', [App\Http\Controllers\ProductController::class, 'show_all'])->name('shop');
+Route::get('/shop/{category}', [App\Http\Controllers\ProductController::class, 'show_category'])->name('shop');

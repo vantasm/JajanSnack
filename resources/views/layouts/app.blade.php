@@ -26,6 +26,7 @@
         <link rel="stylesheet" href="css/style.css">
 
         <link rel="stylesheet" href="css/fontawesome/css/all.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
       </head>
 <body>
     @include("layouts/include/navbar")
@@ -47,5 +48,6 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
     <script src="js/google-map.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/shop.js"></script>
 </body>
 </html>
