@@ -5,27 +5,27 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         
-        <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap" rel="stylesheet">
+        <link href="{{ URL::to('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap') }}" rel="stylesheet">
+        <link href="{{ URL::to('https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap') }}" rel="stylesheet">
+        <link href="{{ URL::to('https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap') }}" rel="stylesheet">
         
-        <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
-        <link rel="stylesheet" href="css/animate.css">
+        <link rel="stylesheet" href="{{ URL::to('css/open-iconic-bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ URL::to('css/animate.css') }}">
         
-        <link rel="stylesheet" href="css/owl.carousel.min.css">
-        <link rel="stylesheet" href="css/owl.theme.default.min.css">
-        <link rel="stylesheet" href="css/magnific-popup.css">
+        <link rel="stylesheet" href="{{ URL::to('css/owl.carousel.min.css') }}">
+        <link rel="stylesheet" href="{{ URL::to('css/owl.theme.default.min.css') }}">
+        <link rel="stylesheet" href="{{ URL::to('css/magnific-popup.css') }}">
     
-        <link rel="stylesheet" href="css/aos.css">
+        <link rel="stylesheet" href="{{ URL::to('css/aos.css') }}">
     
-        <link rel="stylesheet" href="css/bootstrap-datepicker.css">
-        <link rel="stylesheet" href="css/jquery.timepicker.css">
+        <link rel="stylesheet" href="{{ URL::to('css/bootstrap-datepicker.css') }}">
+        <link rel="stylesheet" href="{{ URL::to('css/jquery.timepicker.css') }}">
     
-        <link rel="stylesheet" href="css/flaticon.css">
-        <link rel="stylesheet" href="css/icomoon.css">
-        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="{{ URL::to('css/flaticon.css') }}">
+        <link rel="stylesheet" href="{{ URL::to('css/icomoon.css') }}">
+        <link rel="stylesheet" href="{{ URL::to('css/style.css') }}">
 
-        <link rel="stylesheet" href="css/fontawesome/css/all.css">
+        <link rel="stylesheet" href="{{ URL::to('css/fontawesome/css/all.css') }}">
         <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
       </head>
 <body>
