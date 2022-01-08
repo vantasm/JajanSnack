@@ -22,7 +22,7 @@ class CreateProductsTable extends Migration
             $table->integer("discount");
             $table->string("product_picture")->default("images/snack_default_picture.png");
             $table->integer("after_price");
-            $table->string("description");
+            $table->text("description");
             $table->string("category");
             $table->boolean("status")->default(0);
         });
