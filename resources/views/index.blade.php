@@ -17,7 +17,7 @@
             <div class="row justify-content-center mb-3 pb-3">
                 <div class="col-md-12 heading-section text-center ftco-animate">
 					<h2 class="mb-4">Best Products</h2>
-					<p>Selected randomly based on the review on the products</p>
+					<p>Selected randomly based on the rating of the products</p>
 				</div>
             </div>
         </div>

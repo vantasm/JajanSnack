@@ -34,9 +34,11 @@
                         </form>
                     @endif
                 </li>
+                @if (Auth::user())
                 <li class="nav-item cta cta-colored">
                     <a href="/cart" class="nav-link"><span><i class="fas fa-shopping-cart"></i></span>[0]</a>
                 </li>
+                @endif
             </ul>
         </div>
     </div>

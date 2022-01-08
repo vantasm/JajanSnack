@@ -63,13 +63,16 @@
 
             <div class="row justify-content-center mt-5">
     			<div class="col-md-10 mb-5 text-center">
-    				<ul class="product-category" name="category">
-    					<li><a href="#" class="active" id="all">All</a></li>
-    					<li><a href="#" id="biscuits">Biscuits</a></li>
-    					<li><a href="#" id="chips">Chips</a></li>
-    					<li><a href="#" id="chocolate">Chocolate</a></li>
-    					<li><a href="#" id="candy">Candy</a></li>
-    				</ul>
+					<form action="/shop">
+						<input type="hidden" name="category" value="{{ request("category") }}">
+						<ul class="product-category" name="category">
+							<li><a href="#" class="active" id="all">All</a></li>
+							<li><a href="#" id="biscuits">Biscuits</a></li>
+							<li><a href="#" id="chips">Chips</a></li>
+							<li><a href="#" id="chocolate">Chocolate</a></li>
+							<li><a href="#" id="candy">Candy</a></li>
+						</ul>
+					</form>
     			</div>
     		</div>
             <div class="row">

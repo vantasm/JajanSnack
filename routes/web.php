@@ -14,13 +14,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/shop', function() {
-    return view ("shop");
-});
+// Route::get('/shop', function() {
+//     return view ("shop");
+// });
 
-Route::get('/product', function () {
-    return view('product');
-});
+// Route::get('/product', function () {
+//     return view('product');
+// });
 
 Route::get('/wishlist', function () {
     return view('wishlist');
@@ -57,3 +57,4 @@ Route::get('/index', [App\Http\Controllers\HomeController::class, 'index'])->nam
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/shop', [App\Http\Controllers\ProductController::class, 'show_all'])->name('shop');
 Route::get('/shop/{category}', [App\Http\Controllers\ProductController::class, 'show_category'])->name('shop');
+Route::get('/product/{id}', [App\Http\Controllers\ProductController::class, 'show_product'])->name("product");

@@ -13,4 +13,12 @@ class Product extends Model
     {
         return $this->hasMany("App\DetailTransaction", "product_id", "id");
     }
+
+    public function scopeCategory($query, array $filters)
+    {
+        if(isset($filters["category"]) ? $filters["category"] : false)
+        {
+            return $query->where("category", "like", $filters["category"]);
+        }
+    }
 }
