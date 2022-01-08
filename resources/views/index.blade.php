@@ -24,7 +24,9 @@
         <div class="container">
             <div class="row">
                 {{-- loop start 8x --}}
-                @include("layouts/include/display_snack")
+                @foreach ($products as $product)
+                    @include("layouts/include/display_snack")
+                @endforeach
                 {{-- end loop --}}
             </div>
         </div>

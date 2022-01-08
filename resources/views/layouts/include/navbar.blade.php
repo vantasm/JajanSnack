@@ -17,8 +17,22 @@
                         <a class="dropdown-item" href="/wishlist">Wishlist</a>
                     </div>
                 </li>
-                <li class="nav-item">
-                    <a href="/login" class="nav-link">Login</a>
+                <li class="nav-item dropdown">
+                    @if (Auth::guest())
+                        <a href="/login" class="nav-link">Login</a>
+                    @else
+                        <a href="/profile" class="nav-link dropdown-toggle" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->name }}</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown04">
+                            <a class="dropdown-item" href="/profile">Profile</a>
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();"
+                            aria-current="page">Logout</a>
+                        </div>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            {{ csrf_field() }}
+                        </form>
+                    @endif
                 </li>
                 <li class="nav-item cta cta-colored">
                     <a href="/cart" class="nav-link"><span><i class="fas fa-shopping-cart"></i></span>[0]</a>
