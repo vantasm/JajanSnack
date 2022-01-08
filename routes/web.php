@@ -58,6 +58,10 @@ Route::get('/register', function () {
     return view('register');
 });
 
+Route::get('/shipping', function () {
+    return view('shipping');
+});
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
