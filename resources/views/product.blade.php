@@ -1,8 +1,9 @@
 @extends('layouts/app')
 @section('content')
-    <section class="ftco-section">
-    	<div class="container">
-    		<div class="row">
+<section class="ftco-section">
+	<div class="container">
+		<p><a href="/shop">Back to Shop</a></p>
+		<div class="row">
     			<div class="col-lg-6 mb-5 ftco-animate">
     				<a href="#" class="image-popup"><img src="{{ asset($product->product_picture) }}" class="img-fluid" alt="Jajan Snack Images"></a>
     			</div>
@@ -46,6 +47,9 @@
 										<i class="fas fa-plus"></i>
 									</button>
 								</span>
+							</div>
+							<div class="col-md-6 d-flex mb-3">
+								<p><a href="#" class="btn btn-danger">Add to Wishlist</a></p>
 							</div>
 							<div class="w-100"></div>
 							<div class="col-md-12">
