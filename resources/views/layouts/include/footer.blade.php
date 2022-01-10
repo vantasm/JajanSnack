@@ -13,16 +13,16 @@
             <div class="col-md">
                 <div class="ftco-footer-widget mb-4">
                     <h2 class="ftco-heading-2">JajanSnack</h2>
-                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
+                    <p>You can't buy happiness, but you can buy dessert and that's kind of the same thing.</p>
                     <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
                         <li class="ftco-animate">
-                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="https://twitter.com"><i class="fab fa-twitter"></i></a>
                         </li>
                         <li class="ftco-animate">
-                            <a href="#"><i class="fab fa-facebook-square"></i></a>
+                            <a href="https://facebook.com"><i class="fab fa-facebook-square"></i></a>
                         </li>
                         <li class="ftco-animate">
-                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="https://instagram.com"><i class="fab fa-instagram"></i></a>
                         </li>
                     </ul>
                 </div>
@@ -32,16 +32,16 @@
                     <h2 class="ftco-heading-2">Menu</h2>
                     <ul class="list-unstyled">
                         <li>
-                            <a href="#" class="py-2 d-block">Shop</a>
+                            <a href="/shop" class="py-2 d-block">Biscuits</a>
                         </li>
                         <li>
-                            <a href="#" class="py-2 d-block">About</a>
+                            <a href="/shop" class="py-2 d-block">Chips</a>
                         </li>
                         <li>
-                            <a href="#" class="py-2 d-block">Journal</a>
+                            <a href="/shop" class="py-2 d-block">Chocolate</a>
                         </li>
                         <li>
-                            <a href="#" class="py-2 d-block">Contact Us</a>
+                            <a href="/shop" class="py-2 d-block">Candy</a>
                         </li>
                     </ul>
                 </div>
@@ -52,24 +52,16 @@
                     <div class="d-flex">
                         <ul class="list-unstyled mr-l-5 pr-l-3 mr-4">
                             <li>
-                                <a href="#" class="py-2 d-block">Shipping Information</a>
+                                <a href="/shipping" class="py-2 d-block">Shipping Information</a>
                             </li>
                             <li>
-                                <a href="#" class="py-2 d-block">Returns &amp; Exchange</a>
+                                <a href="https://www.termsfeed.com/live/29c564aa-0d94-472c-a7b5-5be80d3af30c" class="py-2 d-block">Return & Refund Policy</a>
                             </li>
                             <li>
-                                <a href="#" class="py-2 d-block">Terms &amp; Conditions</a>
+                                <a href="https://www.termsandconditionsgenerator.com/live.php?token=hQm2QPyHYXaMbAloYqkEKmlKOyYyMjYF" class="py-2 d-block">Terms &amp; Conditions</a>
                             </li>
                             <li>
-                                <a href="#" class="py-2 d-block">Privacy Policy</a>
-                            </li>
-                        </ul>
-                        <ul class="list-unstyled">
-                            <li>
-                                <a href="#" class="py-2 d-block">FAQs</a>
-                            </li>
-                            <li>
-                                <a href="#" class="py-2 d-block">Contact</a>
+                                <a href="https://www.gdprprivacynotice.com/live.php?token=ArsvbNsFzmPfnms0or82FW35MwZddlRo" class="py-2 d-block">Privacy Policy</a>
                             </li>
                         </ul>
                     </div>
@@ -81,13 +73,13 @@
                     <div class="block-23 mb-3">
                         <ul>
                             <li>
-                                <a href="#"><span class="icon"><i class="far fa-map"></i></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></a>
+                                <a href="#"><span class="icon"><i class="far fa-map"></i></span><span class="text">221B Baker St., London, U.K.</span></a>
                             </li>
                             <li>
-                                <a href="#"><span class="icon"><i class="fas fa-phone-alt"></i></span><span class="text">+2 392 3929 210</span></a>
+                                <a href="#"><span class="icon"><i class="fas fa-phone-alt"></i></span><span class="text">+44-20-8224-3688</span></a>
                             </li>
                             <li>
-                                <a href="#"><span class="icon"><i class="far fa-envelope"></i></span><span class="text">info@yourdomain.com</span></a>
+                                <a href="#"><span class="icon"><i class="far fa-envelope"></i></span><span class="text">jajan@snack.com</span></a>
                             </li>
                         </ul>
                     </div>
