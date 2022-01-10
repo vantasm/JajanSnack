@@ -50,3 +50,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/shop', [App\Http\Controllers\ShopController::class, 'show_all'])->name('shop');
 Route::get('/shop/{category}', [App\Http\Controllers\ShopController::class, 'show_category'])->name('shop');
 Route::get('/product/{id}', [App\Http\Controllers\ProductController::class, 'show_product'])->name("product");
+// Route::get('/wishlist/{user_id}/{product_id}', 'WishController@addToWish');
+Route::get('/wishlist/{user_id}/{product_id}', [App\Http\Controllers\WishController::class, 'addToWish'])->name("wish");
