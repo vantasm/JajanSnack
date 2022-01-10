@@ -73,7 +73,7 @@
                     <div class="block-23 mb-3">
                         <ul>
                             <li>
-                                <a href="#"><span class="icon"><i class="far fa-map"></i></span><span class="text">221B Baker St., London, U.K.</span></a>
+                                <a href="https://goo.gl/maps/CW7B3PMvArkkvqDr6"><span class="icon"><i class="far fa-map"></i></span><span class="text">221B Baker St., London, U.K.</span></a>
                             </li>
                             <li>
                                 <a href="#"><span class="icon"><i class="fas fa-phone-alt"></i></span><span class="text">+44-20-8224-3688</span></a>
