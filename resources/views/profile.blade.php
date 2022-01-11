@@ -37,9 +37,9 @@
             <td><input type="text" placeholder="{{ Auth::user()->address }}"></td>
         </tr>
         <tr class="text-center">
-            <td>Password</td>
-            <td><a href="#"><button class="btn btn-danger py-2 px-4">Change Password</button></a></td>
-        </tr>   
+            <td>Change Password</td>
+            <td><input type="text" placeholder="Password"></td>
+        </tr> 
         <tr class="text-center">
             <td>Confirm Change</td>
             <td><form action="" method="post" enctype="multipart/form-data"><input type="button" class="btn btn-danger py-2 px-4 " style="justify-content: center" value="Confirm Change"></form></td>
