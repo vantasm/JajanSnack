@@ -20,21 +20,16 @@
                     </p>
                 </div>
             </div>
-            @if(Auth::user())
                 <div class="bottom-area d-flex px-3">
                     <div class="m-auto d-flex">
-                        <a href="#" class="add-to-cart d-flex justify-content-center align-items-center text-center">
+                        <a href="#" class="add-to-cart d-flex justify-content-center align-items-center text-center mr-2" data-toggle="tooltip" title="Add to Cart">
                             <span><i class="fas fa-cart-plus"></i></span>
                         </a>
-                        <a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
-                            <span><i class="fas fa-shopping-cart"></i></span>
-                        </a>
-                        <a href="#" class="heart d-flex justify-content-center align-items-center ">
+                        <a href="#" class="heart d-flex justify-content-center align-items-center "  data-toggle="tooltip" title="Add to Wishlist">
                             <span><i class="fas fa-trash-alt"></i></span>
                         </a>
                     </div>
                 </div>
-            @endif
         </div>
     </div>
 </div>
