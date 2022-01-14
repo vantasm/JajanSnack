@@ -25,6 +25,7 @@ class CreateProductsTable extends Migration
             $table->text("description");
             $table->string("category");
             $table->boolean("status")->default(0);
+            $table->timestamps();
         });
     }
 
