@@ -1,5 +1,4 @@
-
-<div class="col-md-6 col-lg-3 ftco-animate">
+<div class="col-md-6 col-lg-3 ftco-animate {{ $product->category }} start_product">
     <div class="product">
         <a href="{{ route('product', $product->id) }}" class="img-prod"><img class="img-fluid" src="{{ $product->product_picture }}" alt="Colorlib Template">
             @if ($product->discount > 0)

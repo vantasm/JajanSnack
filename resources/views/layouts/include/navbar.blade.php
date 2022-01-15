@@ -35,9 +35,20 @@
                     @endif
                 </li>
                 @if (Auth::user())
-                <li class="nav-item cta cta-colored">
-                    <a href="/cart" class="nav-link"><span><i class="fas fa-shopping-cart"></i></span>[0]</a>
-                </li>
+                    <li class="nav-item cta cta-colored">
+                        <?php
+                            $order = App\Models\Transaction::where("user_id", Auth::user()->id)->where("status", "cart")->first();
+                            if (empty($order))
+                            {
+                                $detail_order = 0;
+                            }
+                            else
+                            {
+                                $detail_order = App\Models\DetailTransaction::where("transaction_id", $order->id)->count();
+                            }
+                        ?>
+                        <a href="/cart/{{ Auth::user()->id }}" class="nav-link"><span><i class="fas fa-shopping-cart"></i></span>[{{ $detail_order }}]</a>
+                    </li>
                 @endif
             </ul>
         </div>
