@@ -1,4 +1,105 @@
 @extends("layouts/app")
+<style>
+.modal-container_cart{
+    background-color: rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    opacity: 0;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    transition: opacity 0.3s ease;
+}
+
+.modal-container_cart.show{
+    pointer-events: auto;
+    opacity: 1;
+}
+.modal-container_cart_1{
+    background-color: rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    opacity: 0;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    transition: opacity 0.3s ease;
+}
+
+.modal-container_cart_1.show{
+    pointer-events: auto;
+    opacity: 1;
+}
+
+.modal-container_cart_success{
+    background-color: rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    opacity: 0;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    transition: opacity 0.3s ease;
+}
+
+.modal-container_cart_success.show{
+    pointer-events: auto;
+    opacity: 1;
+}
+
+.modal_cart{
+    background-color: #fff;
+    padding: 30px 50px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    width: 600px;
+    max-width: 100%;
+    text-align: center;
+}
+
+.modal h1{
+    margin: 0;
+}
+
+.modal p{
+    font-size: 14px;
+    opacity: 0.7;
+}
+#close_cart{
+    border: 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    color: #fff;
+    font-size: 14px;
+    padding: 10px 25px;
+	float: left;
+}
+#close_cart_1{
+    border: 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    color: #fff;
+    font-size: 14px;
+    padding: 10px 25px;
+	float: left;
+}
+.list-group-item:hover{
+	background-color: rgb(3, 160, 250);
+	color: white;
+}
+</style>
 @section("content")
     {{-- <div class="hero-wrap hero-bread" style="background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('images/sweet_default_background.jpg')">
         <div class="container">
@@ -88,35 +189,17 @@
     				<p><a href="checkout.html" class="btn btn-primary py-3 px-4">Apply Coupon</a></p>
     			</div>
     			<div class="col-lg-4 mt-5 cart-wrap ftco-animate">
-    				<div class="cart-total mb-3">
+    				<div class="cart-total mb-3" id="cart">
     					<h3>Shipping Address Detail</h3>
 						<form action="#" class="info">
-							<p>Name: Christian</p>
-							<p>Phone: (+62) 822-1310-2093</p>
-							<p>PT Talenta Wirama Berkat, Jalan Boulevard Raya Blok e1/6, JAKARTA, ID 14240</p>
-							{{-- <div class="mapouter"><div class="gmap_canvas"><iframe width="400" height="400" id="gmap_canvas" src="https://maps.google.com/maps?ll=28.5449756,77.1904397&q=Indian Institute of Technology Delhi&t=&z=14&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://techwithlove.com/how-to-know-if-someone-blocked-you-on-whatsapp/">Tech With Love</a></div><style>.mapouter{position:relative;text-align:right;height:100px;width:100px;}.gmap_canvas {overflow:hidden;background:none!important;height:200px;width:200px;}</style></div> --}}
+							<input type="hidden" name="user" id="user_id" value="{{Auth::user()->id}}">
+							<p>Name: <span id='name_addr'>{{Auth::user()->name}}</span></p>
+							<p>Phone: <span id='phone_addr'>(+62)82213105577</span></p>
+							<p id='addr'>{{Auth::user()->address}}</p>
 						</form>
     				</div>
-    				<p><a href="checkout.html" class="btn btn-primary py-3 px-4"  data-toggle="modal" data-target="#exampleModal">Change Address</a></p>
-					<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-						<div class="modal-dialog" role="document">
-						  <div class="modal-content">
-							<div class="modal-header">
-							  <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-							  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-								<span aria-hidden="true">&times;</span>
-							  </button>
-							</div>
-							<div class="modal-body">
-							  <h1>Hello World</h1>
-							</div>
-							<div class="modal-footer">
-							  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-							  <button type="button" class="btn btn-primary">Save changes</button>
-							</div>
-						  </div>
-						</div>
-					  </div>
+    				<p><a href="#" class="btn btn-primary py-3 px-4"  data-toggle="modal" data-target="#exampleModal" id="openModal">Change Address</a></p>
+					
 				</div>
     			<div class="col-lg-4 mt-5 cart-wrap ftco-animate">
     				<div class="cart-total mb-3">
@@ -143,5 +226,157 @@
     			</div>
     		</div>
 			</div>
+			<div class="modal-container_cart" id="modal_container_cart" style="z-index: 100;">
+				<div class="modal_cart" style="height:100vh;overflow-y: auto;">
+					<button id="close_cart"><span aria-hidden="true">&times;</span></button>
+					<h1>Your Address</h1>
+					<ul class="list-group" id="getAddress">
+					
+					</ul>
+					  <p><a href="#" class="btn btn-primary py-3 px-4" id="postAddress" data-toggle="modal" data-target="#exampleModal">Add Address</a></p>
+				</div>
+			</div>
+			<div class="modal-container_cart_1" id="modal_container_cart_1" style="z-index: 100;overflow-y: auto; padding-top:0rem;">
+				<div class="modal_cart">
+					<button id="close_cart_1"><span aria-hidden="true">&times;</span></button>
+					<h1>JajanSnack</h1>
+					<form id="address_form">
+						<input type="hidden" name="_token" value="{{ csrf_token() }}">
+						<div class="form-group">
+							<label for="name">Reciever Name:</label>
+							<input type="text" name="name" id="recv_name" placeholder="John Doe">
+						</div>
+						<div class="form-group">
+							<label for="phone">Reciever Phone:</label>
+							<input type="text" name="phone" id="recv_phone" placeholder="(+62)8xxxxxxxxx">
+						</div>
+						<div class="form-group">
+							<label for="address">Reciever Address:</label>
+							<input type="text" name="address" id="recv_address" placeholder="Jl. Sukamaju Blok A No.3">
+						</div>
+						<a href="#" class="btn btn-primary py-3 px-4" id="submit_Addr">Add New Address</a>
+				</form>
+				</div>
+			</div>
+			<div class="modal-container_cart_success" id="modal_container_cart_success" style="z-index: 100;overflow-y: auto; padding-top:0rem;">
+				<div class="modal_cart">
+					<img src="images/logo/success.png" alt="" style="width: 10rem;">
+					<h3>Sucessfully Added New Address!</h1>
+					<a href="#" class="btn btn-primary py-3 px-4" id="success_ok">OK!</a>
+				</div>
+			</div>
 	</section>
+	<script>
+		// List Address
+		const open = document.getElementById("openModal");
+		const modal_container = document.getElementById("modal_container_cart");
+		const close = document.getElementById("close_cart");
+		const on_scs = document.getElementById('success_ok');
+		const id = document.getElementById("user_id").value;
+		let i = 1;
+
+		open.addEventListener('click', ()=> {
+			modal_container.classList.add('show');
+		})
+
+		close.addEventListener('click', () => {
+			modal_container.classList.remove('show');
+			let parent = document.getElementById("getAddress");
+			parent.textContent = "";
+			i=1;
+		})
+		on_scs.addEventListener('click', ()=>{
+			document.getElementById('modal_container_cart_success').remove('show');
+		})
+		//Address Form
+		const post_open = document.getElementById("postAddress");
+		const modal_container_1 = document.getElementById("modal_container_cart_1");
+		const close_1 = document.getElementById("close_cart_1");
+
+		post_open.addEventListener('click', ()=> {
+			modal_container_1.classList.add('show');
+			modal_container.classList.remove('show');
+			let parent = document.getElementById("getAddress");
+			parent.textContent = "";
+			i=1;
+		})
+
+		close_1.addEventListener('click', () => {
+			modal_container_1.classList.remove('show');
+		})
+
+
+		function chooseAddr(i){
+			const user = document.getElementById('name_addr_'+i).textContent;
+			const phone = document.getElementById('phone_addr_'+i).textContent;
+			const address = document.getElementById('addr_'+i).textContent;
+
+			document.getElementById('name_addr').textContent = user;
+			document.getElementById('phone_addr').textContent = phone;
+			document.getElementById('addr').textContent = address;
+
+			modal_container.classList.remove('show');
+			let parent = document.getElementById("getAddress");
+			parent.textContent = "";
+			i=1;
+		}
+
+		$(document).ready(function(){
+            $('#openModal').click(function(){
+                $.ajax({
+                    type: "GET",
+                    url: "/address/" + id,
+                    dataType: 'json',
+                    success: function(data){
+							if (data) {
+								try {
+									data.forEach(element => {
+									$('#getAddress').append("<li class='list-group-item my-2'><p>Name: <span id='name_addr_"+i+"'>"+element["reciever_name"]+"</span></p>\
+									<p>Phone: <span id='phone_addr_"+i+"'>"+element["reciever_phone"]+"</span></p>\
+									<p id='addr_"+i+"'>"+element["address"]+"</p>\
+									<a href='#cart' onclick='chooseAddr("+i+")' id='prevent'><span class='fa fa-angle-right' style='float: right;cursor: pointer;'></span></a></li>");
+									i++;});
+								} catch (err) {
+									$('#getAddress').append("<li class='list-group-item my-2'><p>Name: <span id='name_addr_"+i+"'>"+data["reciever_name"]+"</span></p>\
+									<p>Phone: <span id='phone_addr_"+i+"'>"+data["reciever_phone"]+"</span></p>\
+									<p id='addr_"+i+"'>"+data["address"]+"</p>\
+									<a href='#cart' onclick='chooseAddr("+i+")' id='prevent'><span class='fa fa-angle-right' style='float: right;cursor: pointer;'></span></a></li>");
+									
+								}
+							} else {
+								$('#getAddress').append("<p>There is no address record, please Input one!</p>");
+							}
+						
+                    },
+                });
+            });
+			$.ajaxSetup({
+				headers: {
+					'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+				}
+			});
+			$('#submit_Addr').click(function(){
+				// e.preventDefault();
+   
+				var name = $("#recv_name").val();
+				var phone = $("#recv_phone").val();
+				var address = $("#recv_address").val();
+				var success = $('#modal_container_cart_success');
+
+				$.ajax({
+					type: "POST",
+					url: "/address/post",
+					data: {id:id,name:name, phone:phone, address:address},
+					dataType: "json",
+					success: function(response){
+						success.addClass('show');
+						modal_container_1.classList.remove('show');
+						// alert("success");
+						$('#address_form').trigger("reset");
+					}
+				});
+			});
+        });
+
+	</script>
 @endsection

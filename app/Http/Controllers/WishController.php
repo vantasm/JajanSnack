@@ -10,12 +10,12 @@ use App\Models\Wishlist;
 class WishController extends Controller
 {
     //
-    public function addToWish($user_id, $product_id){
+    public function addToWish(Request $request){
         $wish = new Wishlist();
-        $wish->product_id = $product_id;
-        $wish->user_id = $user_id;
+        $wish->product_id = $request->product_id;
+        $wish->user_id = $request->user_id;
         $wish->save();
 
-        return redirect('/')->with('success','Added to Wishlist');
+        return back()->with('success','Added to Wishlist');
     }
 }

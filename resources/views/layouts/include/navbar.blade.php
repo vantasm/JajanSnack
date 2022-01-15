@@ -21,7 +21,7 @@
                     @if (Auth::guest())
                         <a href="/login" class="nav-link">Login</a>
                     @else
-                        <a href="/profile" class="nav-link dropdown-toggle" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->name }}</a>
+                        <a href="#" class="nav-link dropdown-toggle" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->name }}</a>
                         <div class="dropdown-menu" aria-labelledby="dropdown04">
                             <a class="dropdown-item" href="/profile">Profile</a>
                             <a class="dropdown-item" href="{{ route('logout') }}"

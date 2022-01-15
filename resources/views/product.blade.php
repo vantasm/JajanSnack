@@ -3,6 +3,12 @@
 <section class="ftco-section">
 	<div class="container">
 		<p><a href="/shop">Back to Shop</a></p>
+		@if ($message = Session::get('success'))
+		<div class="alert alert-success alert-block">
+			<button type="button" class="close" data-dismiss="alert">×</button>    
+			<strong>{{ $message }}</strong>
+		</div>
+		@endif
 		<div class="row">
     			<div class="col-lg-6 mb-5 ftco-animate">
     				<a href="#" class="image-popup"><img src="{{ asset($product->product_picture) }}" class="img-fluid" alt="Jajan Snack Images"></a>
@@ -49,7 +55,15 @@
 								</span>
 							</div>
 							<div class="col-md-6 d-flex mb-3">
-								<p><a href="#" class="btn btn-danger">Add to Wishlist</a></p>
+								{{-- <p><a href="#" class="btn btn-danger">Add to Wishlist</a></p> --}}
+								<form name="add-blog-post-form" id="add-blog-post-form" method="post" action="{{url('wishlist')}}">
+									@csrf
+									 <input type="hidden" value="{{$product->id}}" name="product_id" id="product_id" readonly>
+									 <input type="hidden" value="{{Auth::user()->id}}" name="user_id" id="user_id" readonly>
+									 <button type="submit" class="btn btn-danger">
+										<a class="btn btn-danger">Add to Wishlist</a>
+									 </button>
+								</form>
 							</div>
 							<div class="w-100"></div>
 							<div class="col-md-12">
