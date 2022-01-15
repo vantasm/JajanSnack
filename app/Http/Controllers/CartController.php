@@ -44,13 +44,13 @@ class CartController extends Controller
 
     public function checkout($orderId, $user_id)
     {
-        $order = Transaction::where("user_id", $user_id)->where("status", "cart")->where("id", $orderId)->first();
-        $order->status = "checkout";
-        $order->update();
-
         $check_order = Transaction::where("user_id", $user_id)->where("status", "cart")->first();
         $detail_order = DetailTransaction::where("transaction_id", $check_order->id)->get();
         $counter = $detail_order->count();
+
+        $order = Transaction::where("user_id", $user_id)->where("status", "cart")->where("id", $orderId)->first();
+        $order->status = "checkout";
+        $order->update();
 
         return redirect()->back()->with("counter", $counter)->with("message", "Your item(s) has been payed");
     }

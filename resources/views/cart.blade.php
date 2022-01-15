@@ -73,7 +73,11 @@
 													</div>
 												</td>
 												
-												<td class="total">Rp {{ number_format($detail->total_price, 0, ",", ".") }}</td>
+												@if($product->discount > 0)
+													<td class="total">Rp {{ number_format($product->after_price * $detail->quantity, 0, ",", ".") }}</td>
+												@else
+													<td class="total">Rp {{ number_format($product->price * $detail->quantity, 0, ",", ".") }}</td>
+												@endif
 											</tr>
 										@endforeach
 									@endif
