@@ -109,7 +109,7 @@
                 </div>
             </div>
         </div>   
-    </div> --}}
+    </div>
 	<h1 class="" style="margin-left: 80px;font-weight: bold">Cart</h1>
     <section class="ftco-section ftco-cart">
 			<div class="container">
@@ -141,8 +141,8 @@
 										@foreach($detail_order as $detail)
 											<?php
 												$product = App\Models\Product::where("id", $detail->product_id)->first();
-												$before_price = $before_price * $detail->quantity + $product->price;
-												$after_price = $after_price + $detail->total_price;
+												$before_price = $before_price + $product->price * $detail->quantity;
+												$after_price = $after_price + $product->after_price * $detail->quantity;
 											?>
 											<tr class="text-center">
 												<td class="product-remove">
@@ -203,25 +203,16 @@
 							<p><a href="#" class="btn btn-primary py-3 px-4">Apply Coupon</a></p>
 						</div>
 						<div class="col-lg-4 mt-5 cart-wrap ftco-animate">
-							<div class="cart-total mb-3">
-								<h3>Estimate shipping and tax</h3>
-								<p>Enter your destination to get a shipping estimate</p>
-								<form action="#" class="info">
-									<div class="form-group">
-										<label for="">Country</label>
-										<input type="text" class="form-control text-left px-3" placeholder="">
-									</div>
-									<div class="form-group">
-										<label for="country">State/Province</label>
-										<input type="text" class="form-control text-left px-3" placeholder="">
-									</div>
-									<div class="form-group">
-										<label for="country">Zip/Postal Code</label>
-										<input type="text" class="form-control text-left px-3" placeholder="">
-									</div>
-								</form>
-							</div>
-							<p><a href="#" class="btn btn-primary py-3 px-4">Estimate</a></p>
+                            <div class="cart-total mb-3" id="cart">
+                                <h3>Shipping Address Detail</h3>
+                                <form action="#" class="info">
+                                    <input type="hidden" name="user" id="user_id" value="{{Auth::user()->id}}">
+                                    <p>Name: <span id='name_addr'>{{Auth::user()->name}}</span></p>
+                                    <p>Phone: <span id='phone_addr'>(+62)82213105577</span></p>
+                                    <p id='addr'>{{Auth::user()->address}}</p>
+                                </form>
+                            </div>
+                            <p><a href="#" class="btn btn-primary py-3 px-4"  data-toggle="modal" data-target="#exampleModal" id="openModal">Change Address</a></p>
 						</div>
 						<div class="col-lg-4 mt-5 cart-wrap ftco-animate">
 							<div class="cart-total mb-3">
