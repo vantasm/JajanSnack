@@ -16,7 +16,7 @@
         <div class="container">
             <div class="row">
                 {{-- loop start --}}
-                @include("layouts/include/display_snack_delete")
+                @include("layouts/include/display_snack")
                 {{-- end loop --}}
             </div>
             <div class="row mt-5">

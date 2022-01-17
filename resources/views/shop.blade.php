@@ -12,7 +12,7 @@
         </div>
     </div>
 
-    <section class="ftco-section">
+    <section class="ftco-section"  id="place">
         <div class="container">
 			<div class="row no-gutters ftco-services">
 				<div class="col-md-3 text-center d-flex align-self-stretch ftco-animate">
@@ -66,11 +66,11 @@
 					<form action="/shop">
 						<input type="hidden" name="category" value="{{ request("category") }}">
 						<ul class="product-category" name="category">
-							<li><a href="#" class="active" id="all">All</a></li>
-							<li><a href="#" id="biscuits">Biscuits</a></li>
-							<li><a href="#" id="chips">Chips</a></li>
-							<li><a href="#" id="chocolate">Chocolate</a></li>
-							<li><a href="#" id="candy">Candy</a></li>
+							<li><a href="#place" class="active" id="all">All</a></li>
+							<li><a href="#place" id="biscuits">Biscuits</a></li>
+							<li><a href="#place" id="chips">Chips</a></li>
+							<li><a href="#place" id="chocolate">Chocolate</a></li>
+							<li><a href="#place" id="candy">Candy</a></li>
 						</ul>
 					</form>
     			</div>

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTransactionsTable extends Migration
+class CreateAddressUser extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,12 @@ class CreateTransactionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('transactions', function (Blueprint $table) {
+        Schema::create('address_user', function (Blueprint $table) {
             $table->id();
             $table->integer("user_id");
-            $table->date("transaction_date");
-            $table->integer("total_price");
-            $table->string("status");
-            $table->string("proof_payment");
+            $table->string("reciever_name");
+            $table->string("reciever_phone");
+            $table->string("address");
             $table->timestamps();
         });
     }
@@ -31,6 +30,6 @@ class CreateTransactionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('transactions');
+        Schema::dropIfExists('address_user');
     }
 }

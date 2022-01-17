@@ -21,7 +21,7 @@
                     @if (Auth::guest())
                         <a href="/login" class="nav-link">Login</a>
                     @else
-                        <a href="/profile" class="nav-link dropdown-toggle" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->name }}</a>
+                        <a href="#" class="nav-link dropdown-toggle" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->name }}</a>
                         <div class="dropdown-menu" aria-labelledby="dropdown04">
                             <a class="dropdown-item" href="/profile">Profile</a>
                             <a class="dropdown-item" href="{{ route('logout') }}"
@@ -35,9 +35,20 @@
                     @endif
                 </li>
                 @if (Auth::user())
-                <li class="nav-item cta cta-colored">
-                    <a href="/cart" class="nav-link"><span><i class="fas fa-shopping-cart"></i></span>[0]</a>
-                </li>
+                    <li class="nav-item cta cta-colored">
+                        <?php
+                            $order = App\Models\Transaction::where("user_id", Auth::user()->id)->where("status", "cart")->first();
+                            if (empty($order))
+                            {
+                                $detail_order = 0;
+                            }
+                            else
+                            {
+                                $detail_order = App\Models\DetailTransaction::where("transaction_id", $order->id)->count();
+                            }
+                        ?>
+                        <a href="/cart/{{ Auth::user()->id }}" class="nav-link"><span><i class="fas fa-shopping-cart"></i></span>[{{ $detail_order }}]</a>
+                    </li>
                 @endif
             </ul>
         </div>
