@@ -9,9 +9,9 @@ use App\Models\DetailTransaction;
 
 class CartController extends Controller
 {
-    public function cart($user_id)
+    public function cart(Request $request)
     {
-        $order = Transaction::where("user_id", $user_id)->where("status", "cart")->first();
+        $order = Transaction::where("user_id", $request->user_id)->where("status", "cart")->first();
         if(empty($order))
         {
             $detail_order = "";

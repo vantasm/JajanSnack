@@ -47,7 +47,14 @@
                                 $detail_order = App\Models\DetailTransaction::where("transaction_id", $order->id)->count();
                             }
                         ?>
-                        <a href="/cart/{{ Auth::user()->id }}" class="nav-link"><span><i class="fas fa-shopping-cart"></i></span>[{{ $detail_order }}]</a>
+                        <form name="add-blog-post-form" id="add-blog-post-form" method="post" action="{{url('cart')}}">
+                            @csrf
+                            <input type="hidden" value="{{Auth::user()->id}}" name="user_id" id="user_id" readonly>
+                             
+                            {{-- <a href="#" class="nav-link"><span><i class="fas fa-shopping-cart"></i></span>[{{ $detail_order }}]</a> --}}
+                            <button style="margin-top:1rem;"><span><i class="fas fa-shopping-cart"></i></span>[{{ $detail_order }}]</button>
+                        </form>
+                        {{-- <a href="/cart/{{ Auth::user()->id }}" class="nav-link"><span><i class="fas fa-shopping-cart"></i></span>[{{ $detail_order }}]</a> --}}
                     </li>
                 @endif
             </ul>

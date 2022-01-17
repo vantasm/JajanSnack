@@ -68,6 +68,6 @@ Route::post('/address/post', [AddressController::class, 'post_address']);
 // Route::get('/wishlist/{user_id}/{product_id}', [App\Http\Controllers\WishController::class, 'addToWish'])->name("wish");
 Route::get('/product/{id}', [App\Http\Controllers\ProductController::class, 'show_product'])->name("product");
 Route::post('order/{id}/{user_id}', [App\Http\Controllers\ShopController::class, 'order'])->name('order');
-Route::get('cart/{user_id}', [App\Http\Controllers\CartController::class, 'cart'])->name('cart');
+Route::post('/cart', [App\Http\Controllers\CartController::class, 'cart'])->name('cart');
 Route::delete('cart/{id}', [App\Http\Controllers\CartController::class, 'delete'])->name('cart');
 Route::post('checkout/{id}/{user_id}', [App\Http\Controllers\CartController::class, 'checkout'])->name('cart');

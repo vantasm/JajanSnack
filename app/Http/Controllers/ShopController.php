@@ -34,6 +34,7 @@ class ShopController extends Controller
             $order->user_id = $user_id;
             $order->transaction_date = $date;
             $order->status = "cart";
+            $order->address = "";
             $order->proof_payment = "";
             $order->total_price = 0;
             $order->save();
@@ -48,6 +49,7 @@ class ShopController extends Controller
             $order_detail->product_id = $product->id;
             $order_detail->transaction_id = $new_order->id;
             $order_detail->quantity = $request->quantity;
+            $order_detail->address = "";
             $order_detail->total_price = $product->price * $request->quantity;
             $order_detail->save();
         }
@@ -61,7 +63,14 @@ class ShopController extends Controller
         }
 
         $order = Transaction::where("user_id", $user_id)->where("status", "cart")->first();
-        $order->total_price = $order->total_price + $product->price * $request->quantity;
+        if($product->discount > 0)
+        {
+            $order->total_price = $order->total_price + $product->after_price * $request->quantity;
+        }
+        else
+        {
+            $order->total_price = $order->total_price + $product->price * $request->quantity;
+        }
         $order->update();
 
         $product->quantity = $product->quantity - $request->quantity;

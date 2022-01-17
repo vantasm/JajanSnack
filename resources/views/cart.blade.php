@@ -109,7 +109,7 @@
                 </div>
             </div>
         </div>   
-    </div> --}}
+    </div>
 	<h1 class="" style="margin-left: 80px;font-weight: bold">Cart</h1>
     <section class="ftco-section ftco-cart">
 			<div class="container">
@@ -141,8 +141,8 @@
 										@foreach($detail_order as $detail)
 											<?php
 												$product = App\Models\Product::where("id", $detail->product_id)->first();
-												$before_price = $before_price * $detail->quantity + $product->price;
-												$after_price = $after_price + $detail->total_price;
+												$before_price = $before_price + $product->price * $detail->quantity;
+												$after_price = $after_price + $product->after_price * $detail->quantity;
 											?>
 											<tr class="text-center">
 												<td class="product-remove">
@@ -196,11 +196,6 @@
 								<form action="#" class="info">
 									<div class="form-group">
 										<label for="">Coupon code</label>
-										<input type="text" class="form-control text-left pxztate/Province</label>
-										<input type="text" class="form-control text-left px-3" placeholder="">
-									</div>
-									<div class="form-group">
-										<label for="country">Zip/Postal Code</label>
 										<input type="text" class="form-control text-left px-3" placeholder="">
 									</div>
 								</form>
