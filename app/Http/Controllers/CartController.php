@@ -25,14 +25,14 @@ class CartController extends Controller
         return view("cart", compact("order", "detail_order", "counter"));
     }
 
-    public function delete($id)
+    public function delete(Request $request)
     {
-        $order_detail = DetailTransaction::where("product_id", $id)->first();
-
-        $order = Transaction::where("id", $order_detail->transaction_id)->first();
+        $order_detail = DetailTransaction::where("product_id", $request->product_id)->first();
+        
+        $order = Transaction::where("id", $order_detail->transaction_id)->where("status", "cart")->first();
         $order->total_price = $order->total_price - $order_detail->total_price;
         $order->update();
-
+        
         $product = Product::where("id", $order_detail->product_id)->first();
         $product->quantity = $product->quantity + $order_detail->quantity;
         $product->update();

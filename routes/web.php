@@ -69,5 +69,6 @@ Route::post('/address/post', [AddressController::class, 'post_address']);
 Route::get('/product/{id}', [App\Http\Controllers\ProductController::class, 'show_product'])->name("product");
 Route::post('order/{id}/{user_id}', [App\Http\Controllers\ShopController::class, 'order'])->name('order');
 Route::post('/cart', [App\Http\Controllers\CartController::class, 'cart'])->name('cart');
-Route::delete('cart/{id}', [App\Http\Controllers\CartController::class, 'delete'])->name('cart');
+Route::delete('/cart', [App\Http\Controllers\CartController::class, 'delete'])->name('delete');
 Route::post('checkout/{id}/{user_id}', [App\Http\Controllers\CartController::class, 'checkout'])->name('cart');
+Route::post('/edit', [App\Http\Controllers\UserController::class, 'edit_profile'])->name('edit_profile');

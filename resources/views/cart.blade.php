@@ -118,6 +118,11 @@
 						{{ session()->get('message') }}
 					</div>
 				@endif
+				@if(session('error'))
+					<div class="alert alert-danger mb-5">
+						{{ session()->get("error") }}
+					</div>
+				@endif
 				<div class="row">
 					<div class="col-md-12 ftco-animate">
 						<div class="cart-list">
@@ -142,13 +147,16 @@
 											<?php
 												$product = App\Models\Product::where("id", $detail->product_id)->first();
 												$before_price = $before_price + $product->price * $detail->quantity;
+												echo "before price: " . $before_price . "<br>";
 												$after_price = $after_price + $product->after_price * $detail->quantity;
+												echo "after price: " . $after_price . "<br>";
 											?>
 											<tr class="text-center">
 												<td class="product-remove">
-													<form action="/cart/{{ $detail->product_id }}" method="POST" id="form_remove_from_cart">
+													<form action="/cart" method="POST" id="form_remove_from_cart">
 														@csrf
 														{{ method_field('DELETE') }}
+														<input type="hidden" value="{{ $detail->product_id }}" name="product_id" id="product_id" readonly>
 														<a href="#" id="button_remove_from_cart"><i class="fas fa-times"></i></a>
 													</form>
 												</td>
