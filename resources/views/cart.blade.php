@@ -190,38 +190,17 @@
 				@if($counter > 0)
 					<div class="row justify-content-end">
 						<div class="col-lg-4 mt-5 cart-wrap ftco-animate">
-							<div class="cart-total mb-3">
-								<h3>Coupon Code</h3>
-								<p>Enter your coupon code if you have one</p>
+							<div class="cart-total mb-3" id="cart">
+								<h3>Shipping Address Detail</h3>
 								<form action="#" class="info">
-									<div class="form-group">
-										<label for="">Coupon code</label>
-										<input type="text" class="form-control text-left px-3" placeholder="">
-									</div>
+									<input type="hidden" name="user" id="user_id" value="{{Auth::user()->id}}">
+									<p>Name: <span id='name_addr'>{{Auth::user()->name}}</span></p>
+									<p>Phone: <span id='phone_addr'>(+62)82213105577</span></p>
+									<p id='addr'>{{Auth::user()->address}}</p>
 								</form>
 							</div>
-							<p><a href="#" class="btn btn-primary py-3 px-4">Apply Coupon</a></p>
-						</div>
-						<div class="col-lg-4 mt-5 cart-wrap ftco-animate">
-							<div class="cart-total mb-3">
-								<h3>Estimate shipping and tax</h3>
-								<p>Enter your destination to get a shipping estimate</p>
-								<form action="#" class="info">
-									<div class="form-group">
-										<label for="">Country</label>
-										<input type="text" class="form-control text-left px-3" placeholder="">
-									</div>
-									<div class="form-group">
-										<label for="country">State/Province</label>
-										<input type="text" class="form-control text-left px-3" placeholder="">
-									</div>
-									<div class="form-group">
-										<label for="country">Zip/Postal Code</label>
-										<input type="text" class="form-control text-left px-3" placeholder="">
-									</div>
-								</form>
-							</div>
-							<p><a href="#" class="btn btn-primary py-3 px-4">Estimate</a></p>
+							<p><a href="#" class="btn btn-primary py-3 px-4"  data-toggle="modal" data-target="#exampleModal" id="openModal">Change Address</a></p>
+							
 						</div>
 						<div class="col-lg-4 mt-5 cart-wrap ftco-animate">
 							<div class="cart-total mb-3">
