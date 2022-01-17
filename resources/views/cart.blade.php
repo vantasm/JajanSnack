@@ -190,6 +190,24 @@
 				@if($counter > 0)
 					<div class="row justify-content-end">
 						<div class="col-lg-4 mt-5 cart-wrap ftco-animate">
+							<div class="cart-total mb-3">
+								<h3>Coupon Code</h3>
+								<p>Enter your coupon code if you have one</p>
+								<form action="#" class="info">
+									<div class="form-group">
+										<label for="">Coupon code</label>
+										<input type="text" class="form-control text-left pxztate/Province</label>
+										<input type="text" class="form-control text-left px-3" placeholder="">
+									</div>
+									<div class="form-group">
+										<label for="country">Zip/Postal Code</label>
+										<input type="text" class="form-control text-left px-3" placeholder="">
+									</div>
+								</form>
+							</div>
+							<p><a href="#" class="btn btn-primary py-3 px-4">Estimate</a></p>
+						</div>
+						<div class="col-lg-4 mt-5 cart-wrap ftco-animate">
 							<div class="cart-total mb-3" id="cart">
 								<h3>Shipping Address Detail</h3>
 								<form action="#" class="info">
