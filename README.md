@@ -1,6 +1,6 @@
 # JajanSnack
 
-Project Laravel untuk tugas Secure Programming
+Laravel Project for Secure Programming
 
 ## Installation
 
@@ -28,4 +28,15 @@ $ php artisan key:generate
 
 # Run "php artisan serve".
 $ php artisan serve
+```
+
+## User Credentials for Login
+```
+# Admin
+Username: tony@tony.com
+Password: tonytony
+
+# User
+Username: bam@bam.com
+Password: bambangbambang
 ```

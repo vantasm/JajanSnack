@@ -52,7 +52,7 @@ class CartController extends Controller
         $order->status = "checkout";
         $order->update();
 
-        $products = Product::orderBy("rating", "desc")->paginate(8);
+        $products = Product::where("status", 0)->orderBy("rating", "desc")->paginate(8);
         
         // return redirect()->back()->with("counter", $counter)->with("message", "Your item(s) has been payed");
         return redirect("/index")->with("message", "Your item(s) has been payed")->with("products", $products);

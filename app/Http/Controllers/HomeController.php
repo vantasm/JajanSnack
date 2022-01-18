@@ -24,7 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $products = Product::orderBy("rating", "desc")->paginate(8);
+        $products = Product::where("status", 0)->orderBy("rating", "desc")->paginate(8);
         return view('index')->with("products", $products);
     }
 }
