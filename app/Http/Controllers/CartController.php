@@ -39,7 +39,7 @@ class CartController extends Controller
 
         $order_detail->delete();
 
-        return redirect()->back()->with("message", "Item(s) has been deleted");
+        return redirect("/index")->with("message", "Item(s) has been deleted");
     }
 
     public function checkout(Request $request)
@@ -51,7 +51,10 @@ class CartController extends Controller
         $order = Transaction::where("user_id", $request->user_id)->where("status", "cart")->where("id", $request->order_id)->first();
         $order->status = "checkout";
         $order->update();
+
+        $products = Product::orderBy("rating", "desc")->paginate(8);
         
-        return redirect()->back()->with("counter", $counter)->with("message", "Your item(s) has been payed");
+        // return redirect()->back()->with("counter", $counter)->with("message", "Your item(s) has been payed");
+        return redirect("/index")->with("message", "Your item(s) has been payed")->with("products", $products);
     }
 }

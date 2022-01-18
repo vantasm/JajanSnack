@@ -242,10 +242,11 @@
 									<span>Rp {{ number_format($order->total_price, 0, ",", ".") }}</span>
 								</p>
 							</div>
-							<form action="{{ url('checkout') }}" method="POST" id="form_checkout">
+							<form action="/checkout" method="POST" id="form_checkout">
 								@csrf
 								<input type="hidden" value="{{ $order->id }}" name="order_id" id="order_id" readonly>
 								<input type="hidden" value="{{ Auth::user()->id }}" name="user_id" id="user_id" readonly>
+								{{-- <button type="submit">Proceed to Checkout</button> --}}
 								<p><a href="#" class="btn btn-primary py-3 px-4" id="button_checkout">Proceed to Checkout</a></p>
 							</form>
 						</div>

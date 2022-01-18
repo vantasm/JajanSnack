@@ -70,5 +70,5 @@ Route::get('/product/{id}', [App\Http\Controllers\ProductController::class, 'sho
 Route::post('order/{id}/{user_id}', [App\Http\Controllers\ShopController::class, 'order'])->name('order');
 Route::post('/cart', [App\Http\Controllers\CartController::class, 'cart'])->name('cart');
 Route::delete('/delete', [App\Http\Controllers\CartController::class, 'delete'])->name('delete');
-Route::post('/checkout', [App\Http\Controllers\CartController::class, 'checkout'])->name('cart');
+Route::post('/checkout', [App\Http\Controllers\CartController::class, 'checkout'])->name('checkout');
 Route::post('/edit', [App\Http\Controllers\UserController::class, 'edit_profile'])->name('edit_profile');
