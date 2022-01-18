@@ -238,6 +238,7 @@
 							</div>
 							<form action="/checkout/{{ $order->id }}/{{ Auth::user()->id }}" method="POST" id="form_checkout">
 								@csrf
+								
 								<p><a href="#" class="btn btn-primary py-3 px-4" id="button_checkout">Proceed to Checkout</a></p>
 							</form>
 						</div>

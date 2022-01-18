@@ -28,6 +28,9 @@
                             onclick="event.preventDefault();
                             document.getElementById('logout-form').submit();"
                             aria-current="page">Logout</a>
+                            @if (Auth::user()->isadmin)
+                                <a class="dropdown-item" href="/M3ADM1N">Admin</a>
+                            @endif
                         </div>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                             {{ csrf_field() }}

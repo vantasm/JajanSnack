@@ -53,6 +53,7 @@ Route::get('/shipping', function () {
     return view('shipping');
 });
 
+
 Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -70,4 +71,7 @@ Route::get('/product/{id}', [App\Http\Controllers\ProductController::class, 'sho
 Route::post('order/{id}/{user_id}', [App\Http\Controllers\ShopController::class, 'order'])->name('order');
 Route::post('/cart', [App\Http\Controllers\CartController::class, 'cart'])->name('cart');
 Route::delete('cart/{id}', [App\Http\Controllers\CartController::class, 'delete'])->name('cart');
-Route::post('checkout/{id}/{user_id}', [App\Http\Controllers\CartController::class, 'checkout'])->name('cart');
+Route::post('/checkout', [App\Http\Controllers\CartController::class, 'checkout'])->name('cart');
+Route::get('/M3ADM1N',[App\Http\Controllers\AdminController::class, 'show_product'])->name('admin');
+Route::post('/M3ADM1N/edit',[App\Http\Controllers\AdminController::class, 'editPost']);
+Route::post('/M3ADM1N/update',[App\Http\Controllers\AdminController::class, 'update']);
