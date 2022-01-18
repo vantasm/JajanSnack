@@ -147,13 +147,11 @@
 											<?php
 												$product = App\Models\Product::where("id", $detail->product_id)->first();
 												$before_price = $before_price + $product->price * $detail->quantity;
-												echo "before price: " . $before_price . "<br>";
 												$after_price = $after_price + $product->after_price * $detail->quantity;
-												echo "after price: " . $after_price . "<br>";
 											?>
 											<tr class="text-center">
 												<td class="product-remove">
-													<form action="/cart" method="POST" id="form_remove_from_cart">
+													<form action="/delete" method="POST" id="form_remove_from_cart">
 														@csrf
 														{{ method_field('DELETE') }}
 														<input type="hidden" value="{{ $detail->product_id }}" name="product_id" id="product_id" readonly>
@@ -244,8 +242,10 @@
 									<span>Rp {{ number_format($order->total_price, 0, ",", ".") }}</span>
 								</p>
 							</div>
-							<form action="/checkout/{{ $order->id }}/{{ Auth::user()->id }}" method="POST" id="form_checkout">
+							<form action="{{ url('checkout') }}" method="POST" id="form_checkout">
 								@csrf
+								<input type="hidden" value="{{ $order->id }}" name="order_id" id="order_id" readonly>
+								<input type="hidden" value="{{ Auth::user()->id }}" name="user_id" id="user_id" readonly>
 								<p><a href="#" class="btn btn-primary py-3 px-4" id="button_checkout">Proceed to Checkout</a></p>
 							</form>
 						</div>

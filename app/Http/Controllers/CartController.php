@@ -42,16 +42,16 @@ class CartController extends Controller
         return redirect()->back()->with("message", "Item(s) has been deleted");
     }
 
-    public function checkout($orderId, $user_id)
+    public function checkout(Request $request)
     {
-        $check_order = Transaction::where("user_id", $user_id)->where("status", "cart")->first();
+        $check_order = Transaction::where("user_id", $request->user_id)->where("status", "cart")->first();
         $detail_order = DetailTransaction::where("transaction_id", $check_order->id)->get();
         $counter = $detail_order->count();
-
-        $order = Transaction::where("user_id", $user_id)->where("status", "cart")->where("id", $orderId)->first();
+        
+        $order = Transaction::where("user_id", $request->user_id)->where("status", "cart")->where("id", $request->order_id)->first();
         $order->status = "checkout";
         $order->update();
-
+        
         return redirect()->back()->with("counter", $counter)->with("message", "Your item(s) has been payed");
     }
 }
