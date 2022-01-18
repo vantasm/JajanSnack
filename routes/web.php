@@ -75,6 +75,8 @@ Route::post('/checkout', [App\Http\Controllers\CartController::class, 'checkout'
 Route::get('/M3ADM1N',[App\Http\Controllers\AdminController::class, 'show_product'])->name('admin');
 Route::post('/M3ADM1N/edit',[App\Http\Controllers\AdminController::class, 'editPost']);
 Route::post('/M3ADM1N/update',[App\Http\Controllers\AdminController::class, 'update']);
+Route::get('/M3ADM1N/create',[App\Http\Controllers\AdminController::class, 'create']);
+Route::post('/M3ADM1N/store',[App\Http\Controllers\AdminController::class, 'store']);
 Route::delete('/delete', [App\Http\Controllers\CartController::class, 'delete'])->name('delete');
 Route::post('/checkout', [App\Http\Controllers\CartController::class, 'checkout'])->name('checkout');
 Route::post('/edit', [App\Http\Controllers\UserController::class, 'edit_profile'])->name('edit_profile');
