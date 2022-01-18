@@ -2,6 +2,15 @@
 
 Laravel Project for Secure Programming
 
+Kelas : LA07
+
+Kelompok 1 :
+1. Arjuna Accha Dipa - 2301865735
+2. Christian - 2301873522
+3. Delvin Nicholas - 2301852581 
+4. Eric Kurniawan - 2301860072
+5. Wilson Nugrah - 2301858976
+
 ## Installation
 
 From your command line, clone and run beans:
