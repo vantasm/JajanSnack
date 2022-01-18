@@ -24,7 +24,7 @@
                         <a href="#" class="nav-link dropdown-toggle" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->name }}</a>
                         <div class="dropdown-menu" aria-labelledby="dropdown04">
                             <a class="dropdown-item" href="/profile">Profile</a>
-                            <a class="dropdown-item" href="{{ route('logout') }}"
+                            <a class="dropdown-item" href="/logout"
                             onclick="event.preventDefault();
                             document.getElementById('logout-form').submit();"
                             aria-current="page">Logout</a>
@@ -32,7 +32,7 @@
                                 <a class="dropdown-item" href="/M3ADM1N">Admin</a>
                             @endif
                         </div>
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        <form id="logout-form" action="/logout" method="POST" style="display: none;">
                             {{ csrf_field() }}
                         </form>
                     @endif
