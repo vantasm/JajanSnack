@@ -1,25 +1,3 @@
-@if (Auth::guest() || Auth::user()->isadmin == 0)
-<style>
-    body {
-    background: #dedede;
-}
-    .page-wrap {
-        min-height: 100vh;
-    }
-</style>
-<div class="page-wrap d-flex flex-row align-items-center">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-12 text-center">
-                <span class="display-1 d-block">404</span>
-                <div class="mb-4 lead">The page you are looking for was not found.</div>
-                <a href="/home" class="btn btn-link">Back to Home</a>
-            </div>
-        </div>
-    </div>
-</div>
-
-@else
 @extends('layouts/app_login')
 <style>
     img{
@@ -41,6 +19,9 @@
 </div>
 @endif
 <table class="table">
+    <div class="container">
+        <a href="/M3ADM1N/create" class="btn btn-primary my-4 px-4 my-2">Add Product +</a>
+    </div>
     <thead>
     <tr>
     <th scope="col">No</th>
@@ -62,10 +43,7 @@
                 <form action="/M3ADM1N/edit" method="post">
                     @csrf
                     <input type="hidden" value="{{$product->id}}" name="product_id">
-                    <button class="btn btn-primary" style="margin-right:1rem;">Edit</button>
-                </form>
-                <form action="delete">
-                    <button class="btn btn-danger">Delete</button>
+                    <button class="btn btn-primary px-4" style="margin-right:1rem;">Edit</button>
                 </form>
             </div>
         </td>
@@ -83,5 +61,4 @@
     </tbody>
 </table>
 @endsection
-@endif
 
