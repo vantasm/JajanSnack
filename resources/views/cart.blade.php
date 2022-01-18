@@ -118,6 +118,11 @@
 						{{ session()->get('message') }}
 					</div>
 				@endif
+				@if(session('error'))
+					<div class="alert alert-danger mb-5">
+						{{ session()->get("error") }}
+					</div>
+				@endif
 				<div class="row">
 					<div class="col-md-12 ftco-animate">
 						<div class="cart-list">
@@ -146,9 +151,10 @@
 											?>
 											<tr class="text-center">
 												<td class="product-remove">
-													<form action="/cart/{{ $detail->product_id }}" method="POST" id="form_remove_from_cart">
+													<form action="/delete" method="POST" id="form_remove_from_cart">
 														@csrf
 														{{ method_field('DELETE') }}
+														<input type="hidden" value="{{ $detail->product_id }}" name="product_id" id="product_id" readonly>
 														<a href="#" id="button_remove_from_cart"><i class="fas fa-times"></i></a>
 													</form>
 												</td>
@@ -236,9 +242,11 @@
 									<span>Rp {{ number_format($order->total_price, 0, ",", ".") }}</span>
 								</p>
 							</div>
-							<form action="/checkout/{{ $order->id }}/{{ Auth::user()->id }}" method="POST" id="form_checkout">
+							<form action="/checkout" method="POST" id="form_checkout">
 								@csrf
-								
+								<input type="hidden" value="{{ $order->id }}" name="order_id" id="order_id" readonly>
+								<input type="hidden" value="{{ Auth::user()->id }}" name="user_id" id="user_id" readonly>
+								{{-- <button type="submit">Proceed to Checkout</button> --}}
 								<p><a href="#" class="btn btn-primary py-3 px-4" id="button_checkout">Proceed to Checkout</a></p>
 							</form>
 						</div>
