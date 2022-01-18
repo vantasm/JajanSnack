@@ -49,6 +49,9 @@ class UserController extends Controller
         Session::flush();
         Auth::logout();
 
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
         return redirect("/index")->with("message", "Your account has been deleted");
     }
 }
