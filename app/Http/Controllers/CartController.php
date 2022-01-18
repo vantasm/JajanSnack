@@ -9,9 +9,9 @@ use App\Models\DetailTransaction;
 
 class CartController extends Controller
 {
-    public function cart($user_id)
+    public function cart(Request $request)
     {
-        $order = Transaction::where("user_id", $user_id)->where("status", "cart")->first();
+        $order = Transaction::where("user_id", $request->user_id)->where("status", "cart")->first();
         if(empty($order))
         {
             $detail_order = "";
@@ -25,33 +25,36 @@ class CartController extends Controller
         return view("cart", compact("order", "detail_order", "counter"));
     }
 
-    public function delete($id)
+    public function delete(Request $request)
     {
-        $order_detail = DetailTransaction::where("product_id", $id)->first();
-
-        $order = Transaction::where("id", $order_detail->transaction_id)->first();
+        $order_detail = DetailTransaction::where("product_id", $request->product_id)->first();
+        
+        $order = Transaction::where("id", $order_detail->transaction_id)->where("status", "cart")->first();
         $order->total_price = $order->total_price - $order_detail->total_price;
         $order->update();
-
+        
         $product = Product::where("id", $order_detail->product_id)->first();
         $product->quantity = $product->quantity + $order_detail->quantity;
         $product->update();
 
         $order_detail->delete();
 
-        return redirect()->back()->with("message", "Item(s) has been deleted");
+        return redirect("/index")->with("message", "Item(s) has been deleted");
     }
 
-    public function checkout($orderId, $user_id)
+    public function checkout(Request $request)
     {
-        $check_order = Transaction::where("user_id", $user_id)->where("status", "cart")->first();
+        $check_order = Transaction::where("user_id", $request->user_id)->where("status", "cart")->first();
         $detail_order = DetailTransaction::where("transaction_id", $check_order->id)->get();
         $counter = $detail_order->count();
-
-        $order = Transaction::where("user_id", $user_id)->where("status", "cart")->where("id", $orderId)->first();
+        
+        $order = Transaction::where("user_id", $request->user_id)->where("status", "cart")->where("id", $request->order_id)->first();
         $order->status = "checkout";
         $order->update();
 
-        return redirect()->back()->with("counter", $counter)->with("message", "Your item(s) has been payed");
+        $products = Product::orderBy("rating", "desc")->paginate(8);
+        
+        // return redirect()->back()->with("counter", $counter)->with("message", "Your item(s) has been payed");
+        return redirect("/index")->with("message", "Your item(s) has been payed")->with("products", $products);
     }
 }

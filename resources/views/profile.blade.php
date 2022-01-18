@@ -15,6 +15,11 @@
 
 <section class="ftco-section">
     <div class="container">
+        @if(session()->has('message'))
+            <div class="alert alert-success mb-5">
+                {{ session()->get('message') }}
+            </div>
+        @endif
         <div class="row justify-content-center mb-3 pb-3">
             <div class="col-md-12 heading-section text-center ftco-animate">
                 <h2 class="mb-4">Profile</h2>
@@ -22,31 +27,40 @@
         </div>
     </div>
 
-    
     <table class="table">
-        <tr class="text-center">
-            <td>Name</td>
-            <td><input type="text" placeholder="{{ Auth::user()->name }}"></td>
-        </tr>
-        <tr class="text-center">
-            <td>Email</td>
-            <td><input type="text" placeholder="{{ Auth::user()->email }}"></td>
-        </tr>
-        <tr class="text-center">
-            <td>Address</td>
-            <td><input type="text" placeholder="{{ Auth::user()->address }}"></td>
-        </tr>
-        <tr class="text-center">
-            <td>Change Password</td>
-            <td><input type="text" placeholder="Password"></td>
-        </tr> 
-        <tr class="text-center">
-            <td>Confirm Change</td>
-            <td><form action="" method="post" enctype="multipart/form-data"><input type="button" class="btn btn-danger py-2 px-4 " style="justify-content: center" value="Confirm Change"></form></td>
-        </tr>   
+        <form action="/edit" method="POST">
+            @csrf
+            <input type="hidden" value="{{Auth::user()->id}}" name="user_id" id="user_id" readonly>
+            <tr class="text-center">
+                <td>Name</td>
+                <td><input name="name" type="text" placeholder="{{ Auth::user()->name }}"></td>
+            </tr>
+            <tr class="text-center">
+                <td>Email</td>
+                <td><input name="email" type="text" placeholder="{{ Auth::user()->email }}"></td>
+            </tr>
+            <tr class="text-center">
+                <td>Address</td>
+                <td><input name="address" type="text" placeholder="{{ Auth::user()->address }}"></td>
+            </tr>
+            <tr class="text-center">
+                <td>Change Password</td>
+                <td><input name="password" type="password" placeholder="Password"></td>
+            </tr> 
+            <tr class="text-center">
+                <td>Confirm Change</td>
+                <td><button class="btn btn-danger py-2 px-4" type="submit">Confirm Change</button></td>
+            </tr>   
+        </form>
+        <form action="/delete_account" method="POST">
+            <tr class="text-center">
+                @csrf
+                <input type="hidden" value="{{Auth::user()->id}}" name="user_id" id="user_id" readonly>
+                <td>Delete Account</td>
+                <td><button class="btn btn-danger py-2 px-4" type="submit">Confirm Delete Account</button></td>
+            </tr>
+        </form>
     </table>
-
-
 </section>
     
 

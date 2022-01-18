@@ -68,7 +68,7 @@
 									 <input type="hidden" value="{{$product->id}}" name="product_id" id="product_id" readonly>
 									 <input type="hidden" value="{{Auth::user()->id}}" name="user_id" id="user_id" readonly>
 									 <button type="submit" class="btn btn-danger">
-										<a class="btn btn-danger">Add to Wishlist</a>
+										<a class="btn btn-danger" style="color: white">Add to Wishlist</a>
 									 </button>
 								</form>
 							</div>

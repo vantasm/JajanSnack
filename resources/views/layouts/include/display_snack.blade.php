@@ -37,9 +37,9 @@
                     <a href="#" class="add-to-cart d-flex justify-content-center align-items-center text-center mr-2" data-toggle="tooltip" title="Add to Cart">
                         <span><i class="fas fa-cart-plus"></i></span>
                     </a>
-                    {{-- <a href="/wishlist/{{Auth::user()->id}}/{{$product->id}}" class="heart d-flex justify-content-center align-items-center " data-toggle="tooltip" title="Add to Wishlist">
+                    <a href="/wishlist/{{Auth::user()->id}}/{{$product->id}}" class="heart d-flex justify-content-center align-items-center " data-toggle="tooltip" title="Add to Wishlist">
                         <span><i class="fas fa-heart"></i></span>
-                    </a> --}}
+                    </a>
                     <form name="add-blog-post-form" id="add-blog-post-form" method="post" action="{{url('wishlist')}}">
                         @csrf
                          <input type="hidden" value="{{$product->id}}" name="product_id" id="product_id" readonly>
