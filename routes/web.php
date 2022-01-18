@@ -56,6 +56,7 @@ Route::get('/shipping', function () {
 
 Auth::routes();
 
+Route::post('/login', [App\Http\Controllers\Auth\LoginController::class, 'authenticate'])->middleware('guest');
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/index', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -78,3 +79,4 @@ Route::post('/M3ADM1N/update',[App\Http\Controllers\AdminController::class, 'upd
 Route::delete('/delete', [App\Http\Controllers\CartController::class, 'delete'])->name('delete');
 Route::post('/checkout', [App\Http\Controllers\CartController::class, 'checkout'])->name('checkout');
 Route::post('/edit', [App\Http\Controllers\UserController::class, 'edit_profile'])->name('edit_profile');
+Route::post('delete_account', [App\Http\Controllers\UserController::class, 'delete_account'])->name('delete_account');

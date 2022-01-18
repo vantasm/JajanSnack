@@ -27,10 +27,10 @@
         </div>
     </div>
 
-    <form action="/edit" method="POST">
-        @csrf
-        <input type="hidden" value="{{Auth::user()->id}}" name="user_id" id="user_id" readonly>
-        <table class="table">
+    <table class="table">
+        <form action="/edit" method="POST">
+            @csrf
+            <input type="hidden" value="{{Auth::user()->id}}" name="user_id" id="user_id" readonly>
             <tr class="text-center">
                 <td>Name</td>
                 <td><input name="name" type="text" placeholder="{{ Auth::user()->name }}"></td>
@@ -51,9 +51,16 @@
                 <td>Confirm Change</td>
                 <td><button class="btn btn-danger py-2 px-4" type="submit">Confirm Change</button></td>
             </tr>   
-        </table>
-    </form>
-
+        </form>
+        <form action="/delete_account" method="POST">
+            <tr class="text-center">
+                @csrf
+                <input type="hidden" value="{{Auth::user()->id}}" name="user_id" id="user_id" readonly>
+                <td>Delete Account</td>
+                <td><button class="btn btn-danger py-2 px-4" type="submit">Confirm Delete Account</button></td>
+            </tr>
+        </form>
+    </table>
 </section>
     
 

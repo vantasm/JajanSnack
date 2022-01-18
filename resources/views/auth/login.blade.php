@@ -2,6 +2,11 @@
 
 @section('content')
 <div class="container">
+    @if(session('error'))
+        <div class="alert alert-danger mb-5">
+            {{ session()->get("error") }}
+        </div>
+    @endif
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
